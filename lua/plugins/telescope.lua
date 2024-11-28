@@ -127,7 +127,6 @@ return {
   
       require("telescope").load_extension("colors")
   
-      require("telescope").load_extension("noice")
     end,
   }
   
