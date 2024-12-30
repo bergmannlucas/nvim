@@ -1,13 +1,14 @@
 return {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-    init = function()
-      vim.o.timeout = true
-      vim.o.timeoutlen = 500
-    end,
-    opts = {
-      triggers = {
-        { "<auto>", mode = "nxso" },
-      },
-    },
+	{
+		"folke/which-key.nvim",
+		keys = { "<leader>", "<c-r>", "<c-w>", '"', "'", "`", "c", "v", "g" },
+		cmd = "WhichKey",
+		config = function(_, opts)
+			local wk = require("which-key")
+			wk.setup(opts)
+			wk.add({
+				{ "<leader>f", group = "Find" },
+			})
+		end,
+	},
 }
